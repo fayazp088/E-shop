@@ -1,20 +1,21 @@
-import React from 'react';
-import {Container} from 'react-bootstrap';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import React from "react";
+import { Container } from "react-bootstrap";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import HomeScreen from "./pages/HomeScreen";
+
 
 function App() {
   return (
-   <>
-   <Header />
-   <main>
-   <Container>
-
-    <h1>Hello World!!!</h1>
-   </Container>
-       </main>
-  <Footer/>
-   </>
+    <>
+      <Header />
+      <main>
+        <Container>
+          <HomeScreen />
+        </Container>
+      </main>
+      <Footer />
+    </>
   );
 }
 
