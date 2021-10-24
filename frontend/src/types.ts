@@ -24,3 +24,7 @@ export type RatingType = {
   value: number,
   text: string
 }
+
+export type ProductPageType = {
+  match: any
+}
