@@ -10,12 +10,11 @@ const ProductPage = ({ match }: ProductPageType) => {
   useEffect(() => {
     const fetchProducts = async () => {
       const res: any = await axios.get(`/api/product/${match.params.id}`);
-      console.log(res.data);
       const data: ProductsType = await res.data;
       if (data) setProduct({ ...data });
     };
     fetchProducts();
-  }, []);
+  }, [match]);
 
   return (
     <>
@@ -34,10 +33,10 @@ const ProductPage = ({ match }: ProductPageType) => {
               <h4>{product?.name}</h4>
             </ListGroup.Item>
             <ListGroup.Item>
-              {/* <Rating
-                value={product?.rating}
+              <Rating
+                value={product && product?.rating ? product?.rating : 0}
                 text={`${product?.numReviews} reviews`}
-              /> */}
+              />
             </ListGroup.Item>
             <ListGroup.Item>Price: $ {product?.price}</ListGroup.Item>
             <ListGroup.Item>
@@ -60,7 +59,9 @@ const ProductPage = ({ match }: ProductPageType) => {
                 <Row>
                   <Col>Status:</Col>
                   <Col>
-                    {/* {product?.countInStock > 0 ? "In Stock" : "Out Of Stock"} */}
+                    {product && product?.countInStock > 0
+                      ? "In Stock"
+                      : "Out Of Stock"}
                   </Col>
                 </Row>
               </ListGroup.Item>

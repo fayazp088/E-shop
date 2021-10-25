@@ -5,7 +5,6 @@ export type ProductTypeList = {
 
 
 export type ProductsType = {
-    // product: {
       _id: string;
       name: string;
       image: string;
@@ -16,7 +15,6 @@ export type ProductsType = {
       countInStock: number;
       rating: number;
       numReviews: number;
-    // };
   };
 
 
